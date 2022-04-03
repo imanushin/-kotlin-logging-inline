@@ -3,30 +3,14 @@ import org.gradle.jvm.tasks.Jar
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
 
 plugins {
-    kotlin("multiplatform") version "1.6.0"
-    id("org.jetbrains.dokka") version "1.6.0"
+    kotlin("multiplatform")
+    id("org.jetbrains.dokka")
     `maven-publish`
-    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
     signing
-    id("io.gitlab.arturbosch.detekt") version "1.18.0"
+    id("io.gitlab.arturbosch.detekt")
 }
 
-apply("versions.gradle.kts")
-
-group = "io.github.imanushin"
-version = "0.0.1"
-
-repositories {
-    mavenCentral()
-}
-
-nexusPublishing {
-    repositories {
-        sonatype()
-    }
-}
-
-apply(plugin = "io.github.gradle-nexus.publish-plugin")
+apply("../versions.gradle.kts")
 
 kotlin {
     explicitApi()

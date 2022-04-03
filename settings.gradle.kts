@@ -6,3 +6,5 @@ pluginManagement {
 }
 
 rootProject.name = "kotlin-logging-inline"
+
+include("kotlin-logging-inline")
